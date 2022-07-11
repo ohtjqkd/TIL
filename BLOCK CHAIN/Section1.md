@@ -1,4 +1,6 @@
-# What we will learn in this section
+# Section 1
+
+## What we will learn in this section
 - What is a Blockchain?
 - Understanding SHA256 Hash
 - Immutable Ledger
