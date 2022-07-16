@@ -17,6 +17,9 @@
         - 소프트웨어 라이브러리는 시스템웨어로 간주되기도 하지만 명확하게 구분되지는 않는다. C 런타임 라이브러리는 보통 시스템의 일부로 여기지만, 오픈 GL이나 데이터베이스 라이브러리의 경우는 명확하지 않음
     - 응용 소프트웨어
         - 넓은 의미에서는 컴파일러나 링커 등도 응용소프트웨어에 속하지만 좁은 의미에서는 OS위에서 사용자가 직접 사용하게 되는 소프트웨어를 뜻한다. 이런 경우는 우리가 사용하고 있는 브라우저, 각종 개발툴 등이 속하게 될 듯
+- 커널
+    운영체제처럼 규모가 큰 프로그램이 모두 메모리에 올라간다면 메모리 공간 낭비가 심하기 때문에 항상 필요한 부분만을 메모리에 상주시켜 놓고 나머지 부분은 필요할 때에 올려서 사용하게 된다. 이 중 항상 필요한 부분을 커널이라하고, 좁은 의미의 운영체제라고 함
+
 
 ## 하드웨어
 
@@ -39,9 +42,9 @@
 - 보조기억장치 - 비휘발성(HDD, SSD, CD..)
     - 주기억장치에 비해 속도는 느리지만 많은 자료를 영구적으로 보관할 수 있는 장점이 있음
 
-D-ram(휘발성)과 NANA Flash(비휘발성)의 차이
+D-ram(휘발성)과 NAND Flash(비휘발성)의 차이
 
-[https://www.youtube.com/watch?v=Duf7d8-8dZM&ab_channel=LG%EB%94%94%EC%8A%A4%ED%94%8C%EB%A0%88%EC%9D%B4%EB%8C%80%ED%95%99%EC%83%9D%EC%9D%B8%ED%94%8C%EB%A3%A8%EC%96%B8%EC%84%9C_%EB%94%94%ED%94%8C](https://www.youtube.com/watch?v=Duf7d8-8dZM&ab_channel=LG%EB%94%94%EC%8A%A4%ED%94%8C%EB%A0%88%EC%9D%B4%EB%8C%80%ED%95%99%EC%83%9D%EC%9D%B8%ED%94%8C%EB%A3%A8%EC%96%B8%EC%84%9C_%EB%94%94%ED%94%8C)
+![https://www.youtube.com/watch?v=Duf7d8-8dZM&ab_channel=LG%EB%94%94%EC%8A%A4%ED%94%8C%EB%A0%88%EC%9D%B4%EB%8C%80%ED%95%99%EC%83%9D%EC%9D%B8%ED%94%8C%EB%A3%A8%EC%96%B8%EC%84%9C_%EB%94%94%ED%94%8C](https://www.youtube.com/watch?v=Duf7d8-8dZM&ab_channel=LG%EB%94%94%EC%8A%A4%ED%94%8C%EB%A0%88%EC%9D%B4%EB%8C%80%ED%95%99%EC%83%9D%EC%9D%B8%ED%94%8C%EB%A3%A8%EC%96%B8%EC%84%9C_%EB%94%94%ED%94%8C)
 
 ## 입출력장치
 
@@ -103,3 +106,19 @@ bit 전송간 오류를 막기 위해 패리티 bit라는 것을 쓴다고 함 -
 버스에 대한 자세한 설명
 
 [http://contents.kocw.or.kr/KOCW/document/2015/shinhan/leedonggyu/12.pdf](http://contents.kocw.or.kr/KOCW/document/2015/shinhan/leedonggyu/12.pdf)
+
+버스 신호에 대한 간단한 흐름도
+
+- Read
+
+![read](https://velog.velcdn.com/images%2Fckstn0777%2Fpost%2F78e7f631-6dbf-4995-84e9-8a66487c2d3f%2Fimage.png)
+
+- Write
+
+![write](https://velog.velcdn.com/images%2Fckstn0777%2Fpost%2F163213d8-a8ff-471c-99a7-a4ccbd1e3293%2Fimage.png)
+
+- Interrupt
+
+![interrupt](https://velog.velcdn.com/images%2Fckstn0777%2Fpost%2F5f41ddd2-4d87-43a4-9e2e-6fa2a540b9aa%2Fimage.png)
+
+-출저[https://velog.io/@ckstn0777/%EC%BB%B4%ED%93%A8%ED%84%B0%EA%B5%AC%EC%A1%B0-%EB%B2%84%EC%8A%A4]
