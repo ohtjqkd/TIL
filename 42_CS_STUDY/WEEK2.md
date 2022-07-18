@@ -75,10 +75,26 @@ DevOps를 실현하기 위한 여러가지 방법론들이 개발됐고 그 중 
 
     커밋할 때마다 빌드와 일련의 자동 테스트가 이루어져 동작을 확인하고 변경으로 인해 문제가 생기는 부분이 없도록 보장합니다.
 
-### CD (Continuous Delivery: 지속적 제공(?) / Continuous Deploy: 지속적 배포)
+### CD (Continuous Delivery: 지속적 제공(?) / Continuous Deployment: 지속적 배포)
 
     빌드, 테스트 및 배포
+    성공적으로 병합된 내역을 저장소뿐만 아니라 사용자가 사용할 수 있는 배포 단계까지 릴리즈하는 것을 의미함
+    - Deployment
+        CI 단계를 마치고 릴리즈가 가능하다면 배포까지 자동으로 이루어질 때
+    - Delivery
+        배포단계에서 사람의 검증을 통해 수동으로 이루어진다면 Delivery라고 함
 
 ![CI/CD Flow](https://www.redhat.com/cms/managed-files/styles/wysiwyg_full_width/s3/ci-cd-flow-desktop_edited_0.png?itok=TzgJwj6p)
 
 -출처: redhat
+
+- CI/CD 툴 종류
+    - Jenkins: java기반의 오픈소스 플랫폼으로 다양한 OS에서 사용가능하며 가장 정보가 많음
+    - Bamboo: Atlassian에서 개발한 유료 플랫폼
+    - CircleCI: 부분 유료, 가장 인기있다고 함
+    - TeamCity: 개인 무료
+
+### DevOps 엔지니어
+DevOps 구조를 바꾸는 일을 구현하는 역할
+개발과 운영 전반에 걸친 스킬 뿐만 아니라 사일로화된 팀간의 분열을 연결하는 대인 관계 스킬을 갖춰야함.
+더 자세한 내용은 https://www.atlassian.com/ko/devops/what-is-devops/devops-engineer
