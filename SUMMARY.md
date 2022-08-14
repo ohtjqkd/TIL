@@ -9,3 +9,4 @@
     * [WEEK6 - Load Balancing](42_CS_STUDY/WEEK6.md)
 * [BLOCK CHAIN](BLOCK_CHAIN/README.md)
     * [Section 1](BLOCK_CHAIN/Section1.md)
+    * [Section 2](BLOCK_CHAIN/Section2.md)
