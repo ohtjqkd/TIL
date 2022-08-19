@@ -77,3 +77,41 @@ Difficulty = current target / max target
 
 ### Virtual tour of a Bitcoin Mine
 [채굴설비를 보여주는 기사](https://qz.com/1055126/photos-china-has-one-of-worlds-largest-bitcoin-mines/)
+
+### Mining Pools
+
+대규모 채굴장비를 가진 채굴자들이 생기면서 해싱파워가 낮은 노드들을 위해 도입된 기술
+블록을 채굴할 때, 하나의 Minig Pool에 속한 노드들에게 Nonce의 범위를 나누어 할당하고, 채굴에 성공했을 때는 각 노드들이 제공한 연산력에 따라 보상을 분배한다.
+
+* ASIC
+[Application Specific Integrated Circuit, 주문형 반도체]
+
+특정 응용 분야 및 기기의 특수한 기능 하나하나에 맞춰 만들어진 집적회로
+
+반도체를 간단하게 분류하면 표준형 반도체(Standard)와 주문형 반도체(ASIC)로 나눌 수 있는데, 표준형 반도체는 규격이 정해져 있어 일정 요건만 갖추면 어떤 전자제품에도 쓸 수 있는 제품이다. 반면 주문형 반도체는 특정한 제품을 위해 사용되는 제품으로 반도체 생산 업체가 특정 주문에 맞춰 생산하는 제품이다.
+
+즉 주문형 반도체는 특정 기기를 위해 필요한 기능만 수행하도록 설계 및 제작되는데, 이는 가전, 휴대폰, 자동차 등 각 분야별로 필요한 기능이 다르고 그에 따라 다른 칩이 필요하기 때문이다.
+
+주문형 반도체는 크게 설계방식에 따라 사용자의 요구에 맞춰 처음부터 회로를 설계 및 제조하는 완전 주문형 IC(Full custom IC)과 표준화된 설계를 일부 사용하여 회로를 설계 및 제조하는 반 주문형 IC(semicustom IC)으로 나뉜다.
+
+주문형 반도체는 다품종 소량생산 방식의 상품으로 요구되는 주문 사항을 만족 시키기 위해서 뛰어난 반도체 설계 능력이 요구된다.
+출처: (https://semiconductor.samsung.com/kr/support/tools-resources/dictionary/semiconductor-glossary-application-specific-integrated-circuit-asic/)
+
+### Nonce Range
+
+Nonce의 범위 2 ^ 32 := 4 * 10 ^10
+Hash의 범위 2 ^ 256 := 10 ^ 77
+
+하나의 Nonce만으로는 문제의 답을 찾을 가능성이 매우 낮다. 따라서 타임스탬프와 조합하여 해시값을 찾을 수 있다. (timestamp는 1초마다 바뀌기 때문에 Nonce와의 조합으로 무한대의 조합이 가능함)
+하지만 Mining Pool이나 1초 이내에 모든 Nonce를 확인 할 수 있다면 시간의 낭비를 가져온다. 이를 해결하는 방법은 다음에..
+
+### How Miners Pick Transactions (Part 1)
+
+블록은 주기를 가지고 하나씩 생성되지만, 트랜잭션은 이보다 빠르게 계속 발생한다.
+이런 트랜잭션들은 블록에 쓰여지기 전에 대기하는 장소인 멤풀에 입력되고 채굴자들은 이 멤풀에서 트랜잭션을 선택하여 블록에 기록하게 된다.
+멤풀에는 트랜잭션 아이디와 수수료 정보 등이 기록되어 있는데 채굴자는 보통 수수료가 높은 트랜잭션을 선택하여 블록에 기록하게 될 것이다.
+이렇게 블록의 제한에 맞춰 트랜잭션을 1차적으로 선택하고 Nonce를 탐색하여 채굴을 시작한다.
+이전 Nonce range에서 살펴본대로 해싱파워가 매우 높은 채굴풀이나 노드들은 timestamp가 바뀌기 전 이미 Nonce를 전부 탐색할 수 있기 때문에 유휴생산력이 생기고 이를 효율적으로 사용하기 위한 방법이 바로 트랜잭션을 교체하는 것이다.
+가장 수수료가 낮은 트랜잭션을 멤풀에 있는 것들 중 가장 수수료가 큰 트랜잭션과 교체하면 블록의 내용이 변경되기 때문에 같은 Nonce라도 다른 해시값을 가지게 된다.
+
+### How Miners Pick Transactions (Part 2)
