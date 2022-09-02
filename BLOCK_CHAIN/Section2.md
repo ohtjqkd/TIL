@@ -146,6 +146,8 @@ Hash의 범위 2 ^ 256 := 10 ^ 77
 
 ### The 51% Attack
 
+어렵다.
+
 ### Deriving the current target
 
 current target이 저장되는 곳은 block의 bits field
