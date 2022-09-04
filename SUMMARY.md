@@ -13,5 +13,6 @@
 * [BLOCK CHAIN](BLOCK_CHAIN/README.md)
     * [Section 1](BLOCK_CHAIN/Section1.md)
     * [Section 2](BLOCK_CHAIN/Section2.md)
+    * [Section 3](BLOCK_CHAIN/Section3.md)
 * [JENKINS](JENKINS/README.md)
     * [Start Jenkins](JENKINS/1.md)
