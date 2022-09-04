@@ -1,0 +1,17 @@
+# Section 3
+
+## What we will learn in this section
+- Transactions and UTXOs
+- Where do transaction fees come from?
+- How wallets work
+- Signatures: Private & Public Keys
+- Signatures: Keys Demo
+- What is Segregated Witness? (SegWit)
+- Public Key vs Bitcoin Address
+- Hierarchically Deterministic (HD) Wallets
+
+### Transactions and UTXOs
+UTXO - Unspent Transaction Output, 아직 쓰지 않은 잔액이라는 의미
+비트코인 네트워크에서는 잔액이라는 개념이 존재하지 않기 때문에, 트랜잭션에 의한 결과물들의 합을 잔액이라는 개념으로 사용하는데 이를 UTXO 데이터로 대체한다.
+각 지갑의 UTXO들은 해당 지갑 주인에 대해 공개키 암호로 잠겨있다.
+이러한 체계에서 거래를 하기 위해서는 UTXO를 선택하여 거래액 이상(수수료 포함)을 만들고 해당 트랙잭션을 input으로 하여 새로운 UTXO를 만들어 거래를 진행한고 해당 트랜잭션을 사용처리하여 잔액을 줄이는 형태이다. 만약 거래액을 정확히 맞출 수 없다면 초과분에 대하여 돌려주는 방식으로 처리를 한다.
