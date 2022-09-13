@@ -26,7 +26,7 @@ UTXO를 처리하면서 수수료도 같이 처리함.
 * 입력값으로 사용된 Transaction의 체크는 어떻게 하는것인지? block의 내용을 변경해서 바꿀 수 있는 것도 아닌데?? output 쪽에 기록이 되는건지
 
 ### Signatures: Private & Public Keys
-트랜잭션의 내용을 암호화하는 방법
+트랜잭션의 내용을 암호화하는 방법  
 ![private&pulbic](../assets/Screenshot%20from%202022-09-13%2019-59-16.png)
 
 transaction을 개인키로 서명하고 공개키와 함께(?) 브로드캐스팅 -> 블록체인 검증 함수를 통해서 다른 노드들이 검증하는 듯?
