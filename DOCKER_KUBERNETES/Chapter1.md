@@ -62,6 +62,7 @@ sudo apt-get update && sudo apt-get install -y kubectl
 ```
 
 ## minikube install
+https://minikube.sigs.k8s.io/docs/start/
 
 ```
 #!/usr/bin/env bash
@@ -72,3 +73,10 @@ set -euf -o pipefail
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 sudo install minikube-linux-amd64 /usr/local/bin/minikube
 ```
+
+
+* minikube
+가상환경을 사용하여 쿠버네티스 클러스터를 구현
+드라이버를 선택하여 원하는 가상환경에서 구성가능
+실제 운영환경에서 사용하기는 어렵지만 쿠버네티스 학습환경으로 활용하기 좋음
+
