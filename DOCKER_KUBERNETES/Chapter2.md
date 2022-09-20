@@ -182,3 +182,63 @@ __읽기전용 볼륨 연결__
 # 도커의 web-volume 볼륨을 nginx의 웹 루트 디렉토리로 읽기 전용 마운트
 docker run -d --name nginx -v web-volume:/usr/share/nginx/html:ro nginx
 ```
+
+## Log
+__STDOUT / STDERR__  
+stdout / stderr 로 출력을 하면 docker에서 로그를 쌓아서 logging driver로 넘겨줌
+
+__로그 확인하기__  
+```
+# 전체 로그 확인
+docker logs [container]
+
+# 마지막 로그 n줄 확인
+docker logs --tail n [container]
+
+# 실시간 로그 스트림 확인
+docker logs -f [container]
+
+# 로그마다 타임스탬프 표시
+docker logs -f -t [container]
+```
+
+__호스트 운영체제의 로그 저장 경로__  
+```
+# log driver가 json-file인 경우
+cat /var/lib/docker/containers/${CONTAINER_ID}/${CONTAINER_ID}-json.log
+```
+
+__로그 용량 제한하기__  
+컨테이너 단위로 로그 용량 제한을 할 수 있지만, 도커 엔진에서 기본 설정을 진행할 수도 있음
+```
+# 한 로그 파일 당 최대 크기를 3Mb로 제한하고, 최대 로그 파일 3개로 로테이팅.
+docker run \
+    -d \
+    --log-driver=json-file \
+    --log-opt max-size=3m \
+    --log-opt max-file=5 \
+    nginx
+```
+
+__로그 드라이버__  
+![log driver](https://s3.eu-west-1.amazonaws.com/redsys-prod/articles/f61c79b58d2c6406c30d8bc1/images/Screen-Shot-2017-09-11-at-3.08.50-PM.png)
+
+## Image
+__도커 이미지 구조__  
+![docker layer architecture](https://subicura.com/assets/article_images/2017-01-19-docker-guide-for-beginners-1/image-layer.png)
+```
+# RootFS.Layers에서 각 layer의 해시값을 볼 수 있음
+docker image inspect [image]
+```
+
+__Dockerfile 없이 이미지 생성__  
+기존 컨테이너를 기반으로 새 이미지를 생성할 수 있음
+```
+# docker commit [OPTIONS] CONTAINER [REPOSITORY[:TAG]]
+# ubuntu 컨테이너의 현재 상태를 my_ubuntu:v1 이미지로 생성
+docker commit -a fastcampus -m "First commit" ubuntu my_ubuntu:v1
+```
+
+__Dockerfile 이용하여 이미지 생성__  
+__빌드 컨텍스트__  
+__.dockerignore__  
