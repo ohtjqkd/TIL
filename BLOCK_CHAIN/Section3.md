@@ -33,3 +33,20 @@ transaction을 개인키로 서명하고 공개키와 함께(?) 브로드캐스�
 
 ### Signatures: Keys Demo
 https://tools.superdatascience.com/blockchain/public-private-keys
+
+### What is Segregated Witness? (SegWit)
+블록사이즈: 1mb
+거래 속도의 확장성
+비트코인은 현재 기술력으로 1초에 7개의 거래를 성사시킴, 시중의 금융기관의 처리 속도에 비해 매우 느림(1초에 수백 만 건)
+이런 거래 속도의 확정성 문제 때문에 나오게 된 것이 세그윗(Segregated Witness; Segwit)  
+
+트랜잭션에서 서명을 분리하여 실제 블록에 담을 수 있는 트랜잭션 수를 늘린다(하드포크 없이 실질적 블록사이즈를 늘릴 수 있게 됨)
+* 궁금한 점 그럼 서명은 어디에 저장이 되는 건가? 찾아보니 segwit주소라는 개념이 있는데 이게 어떻게 연결되는 걸까요, Witness라는 새로운 데이터 레이어를 넣고 블록과 동기화 한다는데 이게 뭐죠..
+
+
+### Public Key vs Bitcoin Address
+
+Private key --(타원함수)--> Public key --(해시함수)--> Address   
+코인을 보낼 때 주소 뿐만 아니라 Public key의 주소로 바로 보내는 것도 가능함. 하지만 주소라는 값을 쓰는 이유는 타원함수의 혹시 모를 결함이 발견되었을 경우, 즉 역설계가 가능해지는 경우 public key가 완전 공개되어있다면 private key가 역설계되어 보안에 큰 문제가 생기게 되는데 이를 막기 위해 해싱을 통해 주소와 public key 사이에 암호화 계층을 하나 더 쌓아 최대한 피해를 늦추기 위한 것임
+
+### Hierarchically Deterministic (HD) Wallets
