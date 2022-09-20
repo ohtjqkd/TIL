@@ -137,5 +137,48 @@ docker exec -it [container] bash
     ```
     net-alias는 네트워크 상에서 domain name으로 쓰임
 
-Network 부분은 기존에 사용할 때 어려움이 많았던 부분, 다시 한 번 찾아보고 사용법을 익혀야겠다.
+Network 부분은 기존에 사용할 때 어려움이 많았던 부분, 다시 한 번 찾아보고 사용법을 익혀야겠다
 
+## Volume
+__Docker layer__
+- Container layer: Read Write
+    container가 생성됐을 때 생기는 layer, 컨테이너 종료시에 삭제된다.
+- Image layer: Read Only
+    image가 빌드 될 때 생성되며 docker run을 통해 컨테이너가 생겨도 image는 변경되지 않음
+    image는 여러 개의 layer로 나누어져 있으며 이미지가 빌드가 된 이후 변경사항이 있다면 수정된 레이어만 다시 빌드하여 저장한다.
+
+__Host Volume__  
+```
+# 호스트의 /opt/html 디렉토리를 Nginx의 웹 루트 디렉토리로 마운트
+docker run -d --name nginx -v /opt/html:/usr/share/nginx/html nginx
+```
+
+__Volume Container__  
+특정 컨테이너의 볼륨 마운트를 공유할 수 있음
+```
+docker run -d --name [volume name] -it -v /opt/html:/usr/share/nginx/html ubuntu:focal
+
+#my-volume 컨터네이의 볼륨을 공유
+docker run -d --name nginx --volumes-from [volume name] nginx
+```
+
+__Docker Volume__  
+도커가 제공하는 볼륨 관리 기능을 활용하여 데이터를 보존
+기본적으로 /var/lib/docker/volume/$(volume-name)/_data에 데이터가 저장됨
+```
+# web-volume 도커 볼륨 생성
+docker volume create --name db
+
+# 도커의 web-volume 볼륨을 nginx의 웹 루트 디렉토리로 마운트
+docker run -d --name fastcampus-mysql \
+    -e MYSQL_DATABASE=fastcampus \
+    -e MYSQL_ROOT_PASSWORD=fastcampus \
+    -v db:/var/lib/mysql -p 3306:3306 mysql:5.7
+```
+
+__읽기전용 볼륨 연결__
+볼륨 연결 설정에 :ro 옵션을 통해 읽기 전용 마운트 옵션을 설정 가능
+```
+# 도커의 web-volume 볼륨을 nginx의 웹 루트 디렉토리로 읽기 전용 마운트
+docker run -d --name nginx -v web-volume:/usr/share/nginx/html:ro nginx
+```
