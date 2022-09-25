@@ -238,7 +238,7 @@ __Dockerfile 없이 이미지 생성__
 # ubuntu 컨테이너의 현재 상태를 my_ubuntu:v1 이미지로 생성
 docker commit -a fastcampus -m "First commit" ubuntu my_ubuntu:v1
 ```
-
+ 
 __Dockerfile 이용하여 이미지 생성__  
 __빌드 컨텍스트__  
 __.dockerignore__  
