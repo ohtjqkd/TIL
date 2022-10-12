@@ -49,4 +49,9 @@ https://tools.superdatascience.com/blockchain/public-private-keys
 Private key --(타원함수)--> Public key --(해시함수)--> Address   
 코인을 보낼 때 주소 뿐만 아니라 Public key의 주소로 바로 보내는 것도 가능함. 하지만 주소라는 값을 쓰는 이유는 타원함수의 혹시 모를 결함이 발견되었을 경우, 즉 역설계가 가능해지는 경우 public key가 완전 공개되어있다면 private key가 역설계되어 보안에 큰 문제가 생기게 되는데 이를 막기 위해 해싱을 통해 주소와 public key 사이에 암호화 계층을 하나 더 쌓아 최대한 피해를 늦추기 위한 것임
 
-### Hierarchically Deterministic (HD) Wallets
+### Hierarchically Deterministic (HD) Wallets  
+
+계층결정적 지갑이라는 단어가 너무 어렵다... 대충이라도 이해한 내용을 적어보자면 pirvate key 하나로 다수의 거래를 할 경우 거래의 종류에 따라 account의 대한 대략적인 정보를 알 수 있게 된다. 예를 들어 하나의 계정(address)로 집 근처의 피자를 계속 사먹었을 때, 적어도 계정의 주인이 해당 피자가게 근처에 살고 있다는 사실을 알 수 있게 된다. 이러한 점은 익명성이 철저하게 보장되어야 하는 블록체인에 있어서 큰 약점으로 다가 올 수 있게 됐고 , Bip를 통해 새로운 개선책을 제시함
+사용자는 Master private key를 통해 언제든 새로운 private key를 생성하고 새로운 address를 통해 거래가 가능함
+만약 기업의 경우, Master private key를 소유한 사람은 계층적으로 하위에 있는 private key를 통해 모든 계정에 접근할 수 있게 되며, 역방향은 성립하지 않는다.
+Master public key는 public key를 생성할 수 있게 도와주며 검증에 사용된다. 정도로 정리 할 수 있을거 같다.
