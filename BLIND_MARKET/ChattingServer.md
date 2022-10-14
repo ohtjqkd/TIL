@@ -22,3 +22,4 @@ ws는 트래픽이 많고 지연이 낮은 접속환경에서 유리함
 
 ## STOMP
 stomp는 http에서 모델링 되는 Frame([HTTP/2에서 사용하는 정보의 단위](https://brunch.co.kr/@sangjinkang/3)) 기반 프로토콜
+(https://velog.io/@syi9595/Socket.js-%EC%99%80-Stomp%EB%9E%80)
