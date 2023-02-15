@@ -47,3 +47,7 @@ AND     1111 1111 1111 1111 1111 1111 0000 0000
 [https://www.youtube.com/watch?v=tVntagSJctc&ab_channel=%EB%94%B0%EB%9D%BC%ED%95%98%EB%A9%B4%EC%84%9C%EB%B0%B0%EC%9A%B0%EB%8A%94IT]
 [https://www.youtube.com/watch?v=CjnKNIyREHA&ab_channel=%EB%94%B0%EB%9D%BC%ED%95%98%EB%A9%B4%EC%84%9C%EB%B0%B0%EC%9A%B0%EB%8A%94IT]
 [https://www.youtube.com/watch?v=2Jv2rVndRsA&ab_channel=%EB%84%90%EB%84%90%ED%95%9C%EA%B0%9C%EB%B0%9C%EC%9E%90TV]
+[https://limkydev.tistory.com/168]
+[https://limkydev.tistory.com/166]
+[https://shlee0882.tistory.com/110]
+[https://better-together.tistory.com/124]
