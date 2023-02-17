@@ -16,3 +16,7 @@ ECS의 경우 아직 더 공부해야할 서비스지만 간단하게 요약하�
 ## ECR (Elastic Container Registry | Repository(?))
 ECR은 더 간단히 얘기하면 ECS에서 사용할 container를 올릴 수 있는 일종의 장소다. ECS를 사용하기 위해서는 우선 ECR 등록을 해야하고 docker hub에 docker image를 push하는 것처럼 ECR에 보관하여 사용한다.
 
+## RDS (Relation Database Service)
+AWS에서 제공해주는 관계형 데이터베이스 서비스. 유저가 사용하기 쉽도록 인프라를 제공하고 엔드포인트를 통해 접속한다.
+
+위에 살펴본 서비스들은 모두 EC2 내부에서 구현할 수 있는 서비스들이지만 사용 편의성을 위해 aws에서 이들을 모두 컨테이너화 해서 개별 서비스로 제공하고 있는거 같다.
