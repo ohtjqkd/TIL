@@ -52,3 +52,29 @@ nslookup example.com
 ## 참고
 - [How to Setup a Local DNS Server on Ubuntu 20.04](https://www.tecmint.com/setup-local-dns-using-bind9-on-ubuntu/)
 - [How to Configure BIND DNS Server on Ubuntu](https://linuxhint.com/configure_bind_dns_server_ubuntu/)
+
+## HOSTS and RESOLV.CONF
+
+내부 DNS를 구축하던 도중 인증서 관련 이슈로 인해 지체되어 `RESOLV.CONF`와 `HOSTS` 파일에 대해 먼저 정리해보려 한다.
+
+### HOSTS
+
+`/etc/hosts` 파일은 IP 주소와 도메인 이름을 매핑하는데 사용된다. 이 파일은 DNS 서버보다 먼저 검색되기 때문에, 로컬 네트워크에서 사용되는 호스트 이름을 설정할 때 유용하다.
+
+```bash
+sudo vi /etc/hosts
+```
+```conf
+## /etc/hosts
+127.0.0.1       localhost
+127.0.1.1       my-host
+
+127.0.0.2       some.domain.com
+
+...
+```
+위와 같이 ip 주소와 도메인 이름을 매핑해주면 된다.
+
+
+
+
